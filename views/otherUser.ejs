@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+	<title>
+         <%= otherUser.google.name %>
+  </title>
+<link href="/assets/project.css" rel="stylesheet" type="text/css" />
+     <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+
+    
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>
+</head>
+<body>
+
+     <% include partials/minor_header.ejs %> 
+  <br><br>
+  <div class="container-fluid" style="margin-top:70px">
+  <div class="row">
+    <div class="col-lg-8">
+    <div class="projectDetails">
+      <h1><%= otherUser.google.name %>'s Profile</h1>
+      <img style="width:50px;height:50px;" class="img-circle" src="<%= otherUser.google.imageUrl %>">
+       <h4>Name: <%= otherUser.google.name %></h4>
+         <h4>Email: <%= otherUser.google.email %></h4>
+          <% if(otherUser.mob){ %>
+          <h4>Mobile No.: <%= otherUser.mob %></h4>
+          <% } %>
+                <div class="social-links">
+      <% if(otherUser.github){ %>
+      <div class="social-git img-circle">
+        <a href="<%=otherUser.github%>" target="blank"><i class="fa fa-github fa-2x"></i></a>
+      </div>
+      <% } %>
+      <% if(otherUser.facebook){ %>
+      <div class="social-fb img-circle">
+        <a href="<%=otherUser.facebook%>" target="blank"><i class="fa fa-facebook fa-2x"></i></a>
+      </div>
+      <% } %>
+      <br clear="all" />
+    </div>
+   </div>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
